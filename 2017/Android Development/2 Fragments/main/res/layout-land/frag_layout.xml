@@ -1,0 +1,56 @@
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+android:id="@+id/activity_main"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+    <!--- xmlns:tools="http://schemas.android.com/tools"
+tools:context="com.example.admiralfresh.fragagain.MainActivity"> -->
+
+<!---
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/hello" />   -->
+<fragment
+    class="com.example.admiralfresh.fragagain.lm_Frag"
+    android:layout_weight="1"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:id="@+id/lm_fragmentID"
+    tools:layout="@layout/lmfrag_xml" />
+
+<fragment
+    class="com.example.admiralfresh.fragagain.pm_Frag"
+    android:layout_weight="1"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:id="@+id/pm_fragmentID"
+    tools:layout="@layout/pmfrag_xml" />
+
+<!--
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Stop Services"
+    android:id="@+id/button"
+    android:onClick="stopService"
+    android:layout_below="@+id/button2"
+    android:layout_alignLeft="@+id/button2"
+    android:layout_alignStart="@+id/button2"
+    android:layout_alignRight="@+id/button2"
+    android:layout_alignEnd="@+id/button2" />
+
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/button2"
+    android:text="Start Services"
+    android:onClick="startService"
+    android:layout_marginTop="141dp"
+    android:layout_below="@+id/button"
+    android:layout_centerHorizontal="true" />
+!-->
+</LinearLayout>

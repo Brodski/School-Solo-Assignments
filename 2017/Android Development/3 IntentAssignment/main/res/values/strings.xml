@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">IntentAssignment</string>
+    <string-array name="stylez">
+        <item>Normal</item>
+        <item>Bold</item>
+        <item>Italic</item>
+        <item>Bold-Italic</item>
+    </string-array>
+
+    <string-array name="typez">
+        <item>Default</item>
+        <item>Default Bold</item>
+        <item>Monospace</item>
+        <item>Sans Serif</item>
+        <item>Serif</item>
+    </string-array>
+
+
+</resources>

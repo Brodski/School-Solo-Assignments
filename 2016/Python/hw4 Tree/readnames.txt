@@ -1,0 +1,10 @@
+50 greatgreatgreatGrandpa 
+80 greatgreatGrandpa 
+60 greatGrandpa     
+90 greatGrandpaBro  
+55 Gradpa 
+85 greatGrandpaBroDaught 
+95 greatGrandpaBroSon
+91 greatGrandpaBroSonSon 
+56 Pa 
+57 Son 

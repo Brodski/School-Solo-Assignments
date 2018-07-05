@@ -1,0 +1,2 @@
+Dependencies for Project 'TEA_Decryption', Target 'Target 1': (DO NOT MODIFY !)
+F (.\TEA_Decryption_uV_.s)(0x59AB31DC)(--cpu ARM7TDMI --bi --pd "__EVAL SETA 1" -g --apcs=interwork -IB:\Keil_v5\ARM\RV31\INC-IB:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 521"--list .\listings\tea_decryption_uv_.lst --xref -o .\objects\tea_decryption_uv_.o --depend .\objects\tea_decryption_uv_.d)

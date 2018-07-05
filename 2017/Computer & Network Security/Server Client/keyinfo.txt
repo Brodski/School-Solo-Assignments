@@ -1,0 +1,17 @@
+Keystore:
+Name = myKeyStore.jks
+Password = 123456
+
+TrustedStore:
+Name = myTrustStore.jts
+Password = 123456
+
+PrivateKeyEntry:
+Password = 123456
+Owner: Name = chris
+Issuer: Name = chris
+
+trustedCertEntry:
+Password = 123456
+Owner: Name = chris
+Issuer: Name = chris

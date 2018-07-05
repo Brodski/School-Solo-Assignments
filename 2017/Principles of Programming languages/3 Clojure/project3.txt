@@ -1,0 +1,157 @@
+;; Chris Brodski
+;; PPL Evening section
+
+;;----------------------------------------
+;;		Problem A
+;;----------------------------------------
+
+
+(defn auxauxpasc [row prevNum]
+    (if (empty?  row)
+        (list 1)
+        (if (and (= (first row) 1) (not (= nil (second row))))
+            (cons 1 (auxauxpasc (rest row) 1) )
+            (cons (+ prevNum (first row)) (auxauxpasc (rest row) (first row)))
+        )
+    )
+)
+
+
+(defn auxpasc [row rowNumb]
+	(if (= rowNumb 2)
+		row
+		(auxpasc (auxauxpasc row 0) (- rowNumb 1) )
+	)
+)
+(defn mypastri [n k]
+	(if (= n 1)
+		1
+    
+    
+    
+    
+
+		(nth (auxpasc '(1 2 1) n ) k)	
+	)
+)
+;;----------------------------------------
+;;		Problem B		
+;;----------------------------------------
+
+(defn mymerge [list1 list2]
+    (if (and (empty? list1) (empty? list2))
+        ()
+        (if (empty? list1) 
+            (cons (first list2) (mymerge () (rest list2)))
+            (if (empty? list2)
+                (cons (first list1) (mymerge () (rest list1)))
+                (if (>= (first list1) (first list2))
+                    (cons (first list2) (mymerge (rest list2) list1))
+                    (cons (first list1) (mymerge (rest list1) list2))
+                )
+            )
+        )
+    )
+)
+
+;;----------------------------------------
+;;		Problem C
+;;----------------------------------------
+(defn removeAtValue [value myList]
+  (if (= value (first myList)) 
+      (rest myList)
+      (cons (first myList) (removeAtValue value (rest myList) ) )
+  )
+)
+
+(defn auxfindmin [min myList]
+    (if (empty? myList)
+        min
+        (if (<= min (first myList))
+            (auxfindmin min (rest myList))
+            (auxfindmin (first myList) (rest myList))
+        )
+    )
+)
+
+(defn findmin [myList]
+    (auxfindmin (first myList) myList)
+)
+
+(defn mymergesort [myList]
+    (if (empty? myList)
+        ()
+        (cons (findmin myList) (mymergesort (removeAtValue (findmin myList) myList)))
+    )
+)
+;;----------------------------------------
+;;		Problem D
+;;----------------------------------------
+
+
+(defn third [myList]
+    (first  (rest (rest myList)))
+)
+
+(defn insertInTree [value tree]
+    (if (<= value (first tree)) 
+       (if (empty? (second tree))
+          (list (first tree) (list value nil nil) (third tree))
+          (list (first tree) (insertInTree value (second tree)) (third tree))
+       )
+       (if (empty? (third tree))
+           (list (first tree) (second tree) (list value nil nil) )
+           (list (first tree) (second tree) (insertInTree value (third tree)) )
+       )
+     )    
+)
+     
+
+(defn auxbuildbst [myValues wholeTree]
+    (if (empty? myValues)
+        wholeTree
+        (auxbuildbst (rest myValues) (insertInTree (first myValues) wholeTree ) )
+    )
+)
+
+(defn mybuildbst [numbers]
+    (auxbuildbst (rest numbers) (list (first numbers) nil nil))
+)    
+
+    
+;;----------------------------------------
+;;		Problem E
+;;----------------------------------------
+
+
+(defn third [myList]
+    (first  (rest (rest myList)))
+)
+
+(defn auxconj [mlist value]
+    (if (empty? mlist)
+        (cons value mlist)
+        (cons (first mlist) (auxconj (rest mlist) value))
+    )
+)
+
+(defn put2listsIn1 [l1 l2]
+    (if (empty? l2)
+        l1
+        (put2listsIn1 (auxconj l1 (first l2)) (rest l2)) 
+    )
+)
+
+(defn myiot [tree]
+    (if (and (empty? (second tree)) (empty? (third tree)) )
+        (list (first tree))
+        (if (and (not (empty? (second tree))) (not (empty? (third tree))) )
+            (put2listsIn1 (auxconj (myiot (second tree)) (first tree)) (myiot (third tree))) 
+            (if (empty? (second tree))
+                (cons (first tree) (myiot (third tree)))
+                (auxconj (myiot (second tree)) (first tree)  )
+            )
+        )
+    )
+)
+ 

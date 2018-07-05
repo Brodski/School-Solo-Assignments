@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">FragAgain</string>
+    <string name="hello">This is from the file</string>
+    <string name="hello2">This is from the SECOND file</string>
+    <string name="portrait_message"> This is Frag 1!  </string>
+    <string name="landscape_message">This is Frag 2! </string>
+    <string name="pmInput"> Waiting for user input</string>
+    <string name="lmInput"> Waiting for user input!!!</string>
+</resources>
