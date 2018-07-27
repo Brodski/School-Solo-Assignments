@@ -53,9 +53,6 @@ public class Receiver {
     }
 
     public static byte[] hash(String fileName) throws IOException, NoSuchAlgorithmException {
-        //       long LUL0 = fileSize/1024;
-//        double LUL = Math.ceil(fileSize/1024);
-//        int BUFFER_SIZE = (int) (Math.ceil(fileSize/1024)+1)*1024 ;
         int BUFFER_SIZE = 32 * 1024;
         try {
             BufferedInputStream file = new BufferedInputStream(new FileInputStream(fileName));

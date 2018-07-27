@@ -89,28 +89,21 @@ public class Sender {
     public static byte[] saveBytesToFile(String fileName, byte[] file1, byte[] file2){
 
         String saveFile = fileName;
-//        FileInputStream in = null;
         ByteArrayOutputStream outputStream;  // = null;
 
         try {
             FileOutputStream fos = new FileOutputStream(fileName);
             outputStream = new ByteArrayOutputStream();
-            //outputStream.write(file1);
             fos.write(file1);
             //printBytes(file1);
             if (file2 != null){
                 //System.out.println("FILE IS NOT NULL");
-                //outputStream.write(file2);
                 fos.write(file2);
-              //  printBytes(file2);
             }
             byte c[] = outputStream.toByteArray();
             //printBytes(c);
             //String saveFile = "message.kmk";
-    //        ObjectOutputStream oout = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(saveFile)));
-     //       oout.writeObject(c);
             outputStream.close();
-      //      oout.close();
             fos.close();
             return c;
         } catch (IOException e) {
@@ -219,14 +212,9 @@ public class Sender {
             nullAr = new byte[ (16-diffInSize) ];
         }
         nullAr[0] = 1;
-//        int roundTo16 =  16 - diffInSize;
         for (int i = 0; i < (nullAr.length - 1); i++) {
-            //nullArr = nullArr + "\0";
-            //String poopy = nullArr;
             nullAr[i+1] = 0;
         }
-        //byte[] pads = nullArr.getBytes();
-
         return nullAr;
 
     }
@@ -244,7 +232,6 @@ public class Sender {
         KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
         SecureRandom random = new SecureRandom();
         generator.initialize(1024, random);
-//        generator.initialize(1024);
 
         PublicKey recPubK = loadPublicKey(yPubKeyFileName);
         cipher.init(Cipher.ENCRYPT_MODE, recPubK);
